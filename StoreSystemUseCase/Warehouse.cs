@@ -1,6 +1,6 @@
 ﻿namespace StoreSystemUseCase
 {
-    internal class Warehouse : GoodsList
+    class Warehouse : GoodsList
     {
         public void Delive(Good good, int quantity)
         {

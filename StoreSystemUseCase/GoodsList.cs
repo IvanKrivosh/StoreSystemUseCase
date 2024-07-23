@@ -1,6 +1,6 @@
 ﻿namespace StoreSystemUseCase
 {
-    internal class GoodsList
+    class GoodsList
     {
         private List<Cell> _cells;
 

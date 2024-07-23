@@ -1,6 +1,6 @@
 ﻿namespace StoreSystemUseCase
 {
-    internal class Shop
+    class Shop
     {
         private readonly Warehouse _warehouse;
 

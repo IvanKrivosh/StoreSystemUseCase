@@ -1,7 +1,6 @@
-﻿
-namespace StoreSystemUseCase
+﻿namespace StoreSystemUseCase
 {
-    internal class Utils
+    class Utils
     {
         public static void CompareIntGreaterValue(int value, string name, int targetValue, bool canBeEqual = false)
         {
