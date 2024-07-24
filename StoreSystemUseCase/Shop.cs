@@ -11,17 +11,7 @@
 
         public Cart Cart()
         {
-            return new Cart(this);
-        }
-
-        public bool IsAvailableGood(Good good, int quantity)
-        {
-            return _warehouse.IsAvailableGood(good, quantity);
-        }
-
-        public void DecreaseGood(Good good, int quantity)
-        {
-            _warehouse.Decrease(good, quantity);
+            return new Cart(_warehouse);
         }
     }
 }

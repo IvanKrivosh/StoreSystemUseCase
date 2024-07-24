@@ -2,23 +2,23 @@
 {
     class Cart : GoodsList
     {
-        private readonly Shop _shop;
+        private readonly IGoodsList _storeList;
 
-        public Cart(Shop shop)
-        {   
-            _shop = shop ?? throw new ArgumentNullException();
+        public Cart(IGoodsList storeList)
+        {
+            _storeList = storeList ?? throw new ArgumentNullException();
         }
 
         public void Add(Good good, int quantity)
         {
-            if (_shop.IsAvailableGood(good, quantity))
+            if (_storeList.IsAvailableGood(good, quantity))
                 AddGood(good, quantity);
         }
 
         public Order Order()
         {
             foreach (Cell cell in Cells)
-                _shop.DecreaseGood(cell.Good, cell.Quantity);
+                _storeList.DecreaseGood(cell.Good, cell.Quantity);
 
             Clear();
 

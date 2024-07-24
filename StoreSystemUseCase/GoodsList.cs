@@ -1,6 +1,6 @@
 ﻿namespace StoreSystemUseCase
 {
-    class GoodsList
+    class GoodsList : IGoodsList
     {
         private List<Cell> _cells;
 
@@ -9,7 +9,7 @@
             _cells = new List<Cell>();
         }
 
-        public IReadOnlyList<Cell> Cells => _cells;
+        protected IReadOnlyList<Cell> Cells => _cells;
 
         public void AddGood(Good good, int quantity)
         {
@@ -36,7 +36,7 @@
             return cell.IsAvailableQuantity(quantity);
         }
 
-        public void Decrease(Good good, int quantity)
+        public void DecreaseGood(Good good, int quantity)
         {
             if (IsAvailableGood(good, quantity))
                 GetCell(good).Decrease(quantity);
